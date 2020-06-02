@@ -24,13 +24,13 @@
   },
   "dependencies": {
     "@graphql-codegen/add": "^1.2.0",
-    "@graphql-codegen/cli": "^1.9.0",
-    "@graphql-codegen/typescript": "^1.2.0",
+    "@graphql-codegen/cli": "^1.15.0",
+    "@graphql-codegen/typescript": "^1.15.0",
     "babel-eslint": "^10.0.1",
     "change-case": "^3.1.0",
     "codeclimate-test-reporter": "^0.5.1",
     "disqus-react": "^1.0.5",
-    "gatsby": "^2.18.4",
+    "gatsby": "^2.22.17",
     "gatsby-link": "^2.1.1",
     "gatsby-plugin-google-analytics": "^2.0.20",
     "gatsby-plugin-manifest": "^2.2.30",
@@ -51,7 +51,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "5.2.1",
     "react-redux": "^7.0.3",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^3.4.1",
     "redux-devtools-extension": "^2.13.8",
     "semantic-ui-react": "^0.87.1",
     "slash": "3.0.0",
@@ -93,7 +93,7 @@
     "jest": "^24.8.0",
     "lint-staged": "8.1.7",
     "mkdirp": "^0.5.1",
-    "plop": "^2.3.0",
+    "plop": "^2.7.1",
     "raw-loader": "^2.0.0",
     "react-test-renderer": "^16.0.0",
     "remark-cli": "^6.0.1",
@@ -105,7 +105,7 @@
     "ts-jest": "^24.0.2",
     "ts-lint": "4.5.1",
     "typescript": "^3.5.0",
-    "xo": "0.24.0"
+    "xo": "^0.30.0"
   },
   "eslintConfig": {
     "extends": "react-app"
