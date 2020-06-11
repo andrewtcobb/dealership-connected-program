@@ -2,12 +2,19 @@ import React from "react";
 
 interface Props {
   tableHeader: string;
+  vins: string[];
 }
 
 export const VehicleTable = (props: Props) => {
-  function renderTable() {
-    return <tr>hello world</tr>;
-  }
+  const renderTable = () => (
+    <>
+      {props.vins.map((vin, index) => (
+        <tr key={index}>
+          <td>{vin}</td>
+        </tr>
+      ))}
+    </>
+  );
 
   return (
     <div>
