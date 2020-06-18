@@ -1,33 +1,38 @@
-import React, { useState, useEffect } from "react";
-import { VehicleTable } from "./VehicleTable";
-import { getVehicles } from "../../services/DealershipVehiclesService";
+import React, { useState, useEffect } from 'react';
+import { VehicleTable } from './VehicleTable';
+import { getVehicles } from '../../services/DealershipVehiclesService';
+import SortedDealershipVehicles from '../../types/SortedDealershipVehicles';
+import './VehicleTableContainer.css';
 
 export const VehicleTableContainer = () => {
-  const [notStartedVins, setnotStartedVins] = useState<string[]>([]);
-  const [inProgressVins, setInProgressVins] = useState<string[]>([]);
-  const [completedVins, setCompletedVins] = useState<string[]>([]);
+    const [notStartedVins, setNotStartedVins] = useState<string[]>([]);
+    const [inProgressVins, setInProgressVins] = useState<string[]>([]);
+    const [completedVins, setCompletedVins] = useState<string[]>([]);
 
-  useEffect(() => {
-    // const thing = getVehicles();
-    // return () => {
-    //   cleanup
-    // }
-  }, []);
+    useEffect(() => {
+        (async function initState() {
+            const vehicles: SortedDealershipVehicles = await getVehicles();
 
-  return (
-    <div>
-      <VehicleTable
-        tableHeader="Not Started"
-        vins={["test1", "test2"]}
-      ></VehicleTable>
-      <VehicleTable
-        tableHeader="In Progress"
-        vins={["test1", "test2"]}
-      ></VehicleTable>
-      <VehicleTable
-        tableHeader="Completed"
-        vins={["test1", "test2"]}
-      ></VehicleTable>
-    </div>
-  );
+            setNotStartedVins(vehicles.notStarted);
+            setInProgressVins(vehicles.inProgress);
+            setCompletedVins(vehicles.completed);
+        })();
+    }, []);
+
+    return (
+        <div className="vehicle-tables">
+            <VehicleTable
+                tableHeader="Not Started"
+                vins={notStartedVins}
+            ></VehicleTable>
+            <VehicleTable
+                tableHeader="In Progress"
+                vins={inProgressVins}
+            ></VehicleTable>
+            <VehicleTable
+                tableHeader="Completed"
+                vins={completedVins}
+            ></VehicleTable>
+        </div>
+    );
 };
