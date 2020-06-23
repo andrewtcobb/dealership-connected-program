@@ -16,11 +16,20 @@ async function getVehicles(): Promise<SortedDealershipVehicles> {
         completed: [],
     };
     const dealership1Vehicles: SortedDealershipVehicles = await getDealership1Vehicles();
-    // const dealership2Vehicles = await getDealership2Vehicles();
+    const dealership2Vehicles: SortedDealershipVehicles = await getDealership2Vehicles();
 
-    dealershipVehicles.notStarted = [...dealership1Vehicles.notStarted];
-    dealershipVehicles.inProgress = [...dealership1Vehicles.inProgress];
-    dealershipVehicles.completed = [...dealership1Vehicles.completed];
+    dealershipVehicles.notStarted = [
+        ...dealership1Vehicles.notStarted,
+        ...dealership2Vehicles.notStarted,
+    ];
+    dealershipVehicles.inProgress = [
+        ...dealership1Vehicles.inProgress,
+        ...dealership2Vehicles.inProgress,
+    ];
+    dealershipVehicles.completed = [
+        ...dealership1Vehicles.completed,
+        ...dealership2Vehicles.completed,
+    ];
 
     return dealershipVehicles;
 }
