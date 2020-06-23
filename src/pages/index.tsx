@@ -1,12 +1,8 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
-import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
-import { withLayout, LayoutProps } from '../components/Layout';
 import { VehicleTableContainer } from '../components/VehicleTable/VehicleTableContainer';
-import './index.css';
-import { useState } from 'react';
+import '../css/index.css';
 
-const IndexPage = (props: LayoutProps) => {
+const IndexPage = () => {
     return (
         <div>
             <h1>Dealerships Connected Program (DCP)</h1>
@@ -15,4 +11,4 @@ const IndexPage = (props: LayoutProps) => {
     );
 };
 
-export default withLayout(IndexPage);
+export default IndexPage;
