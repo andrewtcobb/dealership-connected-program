@@ -5,9 +5,15 @@ import SortedDealershipVehicles from '../../types/SortedDealershipVehicles';
 import './VehicleTableContainer.css';
 
 export const VehicleTableContainer = () => {
-    const [notStartedVins, setNotStartedVins] = useState<string[]>([]);
-    const [inProgressVins, setInProgressVins] = useState<string[]>([]);
-    const [completedVins, setCompletedVins] = useState<string[]>([]);
+    const [notStartedVins, setNotStartedVins] = useState<string[]>([
+        'Loading...',
+    ]);
+    const [inProgressVins, setInProgressVins] = useState<string[]>([
+        'Loading...',
+    ]);
+    const [completedVins, setCompletedVins] = useState<string[]>([
+        'Loading...',
+    ]);
 
     useEffect(() => {
         (async function initState() {
