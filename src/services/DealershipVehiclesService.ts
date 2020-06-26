@@ -1,13 +1,8 @@
 import SortedDealershipVehicles from '../types/SortedDealershipVehicles';
 import * as Dealership2 from '../types/Dealership2Types';
 import axios from 'axios';
-import {
-    Dealership1LineItem,
-    Dealership1Vehicle,
-} from '../types/Dealership1Types';
-import { type } from 'os';
-
-type Status = 'not started' | 'in progress' | 'complete';
+import { Dealership1Vehicle } from '../types/Dealership1Types';
+import { Status } from '../types/Status';
 
 async function getVehicles(): Promise<SortedDealershipVehicles> {
     const dealership1Vehicles: SortedDealershipVehicles = await getDealership1Vehicles();
