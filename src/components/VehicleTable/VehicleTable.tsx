@@ -1,4 +1,7 @@
 import React from 'react';
+import '../../css/bootstrap.css';
+import '../../css/bootstrap-theme.css';
+import './VehicleTable.css';
 
 interface Props {
     tableHeader: string;
@@ -26,11 +29,28 @@ export const VehicleTable = (props: Props) => {
         }
     };
 
+    function getTableHeaderStyle() {
+        switch (props.tableHeader) {
+            case 'Not Started':
+                return 'warning';
+            case 'In Progress':
+                return 'info';
+            case 'Completed':
+                return 'success';
+            default:
+                return '';
+        }
+    }
+
     return (
         <div>
-            <table>
-                <th>{props.tableHeader}</th>
-                {renderTable()}
+            <table className="table table-bordered">
+                <thead>
+                    <tr className={getTableHeaderStyle()}>
+                        <th>{props.tableHeader}</th>
+                    </tr>
+                </thead>
+                <tbody>{renderTable()}</tbody>
             </table>
         </div>
     );

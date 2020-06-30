@@ -3,3 +3,9 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
+.refresh-button {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+}

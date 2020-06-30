@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { VehicleTableContainer } from '../components/VehicleTable/VehicleTableContainer';
 import '../css/index.css';
+import '../css/bootstrap.css';
+import '../css/bootstrap-theme.css';
 import Helmet from 'react-helmet';
 
 const IndexPage = () => {
@@ -20,8 +22,10 @@ const IndexPage = () => {
                 />
                 <html lang="en" />
             </Helmet>
-            <h1>Dealerships Connected Program (DCP)</h1>
-            <VehicleTableContainer></VehicleTableContainer>
+            <body>
+                <h1 className="header">Dealerships Connected Program (DCP)</h1>
+                <VehicleTableContainer></VehicleTableContainer>
+            </body>
         </div>
     );
 };
