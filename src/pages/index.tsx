@@ -9,7 +9,7 @@ const IndexPage = () => {
     return (
         <div>
             <Helmet defer={false}>
-                <title>Dealership Connected Program</title>
+                <title>Dealerships Connected Program</title>
                 <meta
                     name="description"
                     content="FordLabs engineering project #1: Dealership Connected Program"
