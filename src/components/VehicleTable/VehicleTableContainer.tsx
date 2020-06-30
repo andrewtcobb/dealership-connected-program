@@ -14,6 +14,7 @@ export const VehicleTableContainer = () => {
     const [completedVins, setCompletedVins] = useState<string[]>([
         'Loading...',
     ]);
+    const [refresh, setRefresh] = useState<{}>();
 
     useEffect(() => {
         (async function initState() {
@@ -23,22 +24,30 @@ export const VehicleTableContainer = () => {
             setInProgressVins(vehicles.inProgress);
             setCompletedVins(vehicles.completed);
         })();
-    }, []);
+    }, [refresh]);
 
     return (
-        <div className="vehicle-tables">
-            <VehicleTable
-                tableHeader="Not Started"
-                vins={notStartedVins}
-            ></VehicleTable>
-            <VehicleTable
-                tableHeader="In Progress"
-                vins={inProgressVins}
-            ></VehicleTable>
-            <VehicleTable
-                tableHeader="Completed"
-                vins={completedVins}
-            ></VehicleTable>
-        </div>
+        <>
+            <div className="vehicle-tables">
+                <VehicleTable
+                    tableHeader="Not Started"
+                    vins={notStartedVins}
+                ></VehicleTable>
+                <VehicleTable
+                    tableHeader="In Progress"
+                    vins={inProgressVins}
+                ></VehicleTable>
+                <VehicleTable
+                    tableHeader="Completed"
+                    vins={completedVins}
+                ></VehicleTable>
+            </div>
+            <button
+                className="btn-default refresh-button"
+                onClick={() => setRefresh({})}
+            >
+                Refresh
+            </button>
+        </>
     );
 };
